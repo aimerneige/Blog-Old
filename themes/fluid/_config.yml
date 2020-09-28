@@ -440,9 +440,9 @@ links:
       link: 'https://vritser.github.io/',
       image: 'https://avatars3.githubusercontent.com/u/16340478?s=400&u=d35db0b9c626e1464692dbb189dbf98e1ab80dd6&v=4'
     }
-    - {
-      title: 'Nios34',
-      intro: 'Nios34 的个人页面',
-      link: 'http://ftp.ski/',
-      image: 'https://raw.githubusercontent.com/AimerNeige/PicGoData/master/img/Nios34.png'
-    }
+    # - {
+    #   title: 'Nios34',
+    #   intro: 'Nios34 的个人页面',
+    #   link: 'http://ftp.ski/',
+    #   image: 'https://raw.githubusercontent.com/AimerNeige/PicGoData/master/img/Nios34.png'
+    # }
