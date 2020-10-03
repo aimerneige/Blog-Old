@@ -93,6 +93,14 @@ sudo vim /etc/nginx/sites-available/default
     root /var/www/blog;
 ```
 
+如果你需要配置域名，找到这一行：
+
+```nginx
+	server_name _;
+```
+
+将 `_` 修改为你的域名。
+
 ### 检查配置是否正确
 
 ```bash
@@ -133,6 +141,13 @@ sudo nginx -s reload
 </br>
 </br>
 </br>
+
+# 后记
+## 为什么 `Ngixn` 的配置文件要这样改
+
+`Ngixn` 的默认配置文件位于 `/etc/nginx/` 目录下，主配置文件为 `nginx.conf`
+
+我们首先看一下默认的主配置文件
 
 ```nginx
 user www-data;
@@ -222,6 +237,61 @@ http {
 #}
 ```
 
+去掉全部的注释
+
+```nginx
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+	worker_connections 768;
+}
+
+http {
+
+	sendfile on;
+	tcp_nopush on;
+	tcp_nodelay on;
+	keepalive_timeout 65;
+	types_hash_max_size 2048;
+
+	include /etc/nginx/mime.types;
+	default_type application/octet-stream;
+
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+	ssl_prefer_server_ciphers on;
+
+	access_log /var/log/nginx/access.log;
+	error_log /var/log/nginx/error.log;
+
+	gzip on;
+
+	xml application/xml application/xml+rss text/javascript;
+
+	include /etc/nginx/conf.d/*.conf;
+	include /etc/nginx/sites-enabled/*;
+}
+```
+
+默认的服务为什么可以跑呢？注意这一行：
+
+```nginx
+	include /etc/nginx/sites-enabled/*;
+```
+
+切换到 `/etc/nginx/sites-enabled/` 目录下，并查看文件
+
+```bash
+cd /etc/nginx/sites-enabled/
+ls
+```
+
+我们会发现只有一个 `default` 文件
+
+查看它的内容：
+
 ```nginx
 ##
 # You should look at the following URL's in order to grasp a solid understanding
@@ -263,7 +333,7 @@ server {
 	#
 	# include snippets/snakeoil.conf;
 
-	root /var/www/Blog;
+	root /var/www/html;
 
 	# Add index.php to the list if you are using PHP
 	index index.html index.htm index.nginx-debian.html;
@@ -317,11 +387,67 @@ server {
 #}
 ```
 
-
-
-
+去掉注释：
 
 ```nginx
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+```
+
+我相信哪怕没有学习过 `Nginx` 应该也能理解部分含义。
+
+接下来我们看一下 `/var/www/html` 这个目录
+
+```bash
+cd /var/www/html
+ls
+```
+
+只有一个 `index.nginx-debian.html` 文件，正是欢迎界面的源代码。
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 48em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to Nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+```
+
+回到 `/etc/nginx/sites-enabled/` 目录下，我想你应该明白应该修改什么了吧。
+
+<!-- ```nginx
 server {
     listen 80;
 
@@ -331,5 +457,4 @@ server {
         proxy_pass http://localhost:3000/;
     }
 }
-```
-
+``` -->
