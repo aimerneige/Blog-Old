@@ -73,8 +73,8 @@ scp site.tar.xz root@test.aimerneige.com:~/
 通常，我们会将静态网站的源文件放置在 `/var/www/` 这个目录下，但是你也可以放置在家目录或其他你喜欢的位置下。当然，你要保证你喜欢的目录没有问题。<sub>~~（喜欢放在 `/tmp` 下的给爷爬）~~</sub>
 
 ```bash
-sudo tar -Jxv -f site.tar.xz -C ./
-mv public/ /var/www/blog
+tar -Jxv -f site.tar.xz -C ./
+sudo mv public/ /var/www/blog
 ```
 
 ## 配置 `Nginx`
