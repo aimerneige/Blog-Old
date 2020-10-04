@@ -7,8 +7,6 @@ category: [Web, Linux]
 index_img:
 banner_img:
 ---
-# Deploy Static Page
-
 # 使用 Nginx 搭建静态网页服务
 
 > 使用 Nginx 搭建静态网页服务本身是一件非常简单的事，但是我之前在 CSDN 找了几篇教程，弄了一下午也没弄好（不愧是屎山淘金），学了一段时间后端和Linux后，我大概只用了五分钟就弄好了，这里写一篇文章来帮助一下小白。
@@ -75,7 +73,8 @@ scp site.tar.xz root@test.aimerneige.com:~/
 通常，我们会将静态网站的源文件放置在 `/var/www/` 这个目录下，但是你也可以放置在家目录或其他你喜欢的位置下。当然，你要保证你喜欢的目录没有问题。<sub>~~（喜欢放在 `/tmp` 下的给爷爬）~~</sub>
 
 ```bash
-sudo tar -Jxv -f site.tar.xz -C /var/www/blog
+sudo tar -Jxv -f site.tar.xz -C ./
+mv public/ /var/www/blog
 ```
 
 ## 配置 `Nginx`
