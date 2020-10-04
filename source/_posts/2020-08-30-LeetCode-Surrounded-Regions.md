@@ -4,6 +4,7 @@ date: 2020-08-30 10:50:13
 tags: LeetCode
 category: Program
 ---
+
 # Surrounded Regions
 
 > https://leetcode.com/problems/surrounded-regions/
@@ -48,7 +49,7 @@ public:
         if (col == 0) {
             return;
         }
-        
+
         // mark all O as A
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {

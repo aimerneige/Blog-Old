@@ -4,9 +4,10 @@ date: 2020-02-22 00:43:15
 tags: Android
 category: Program
 ---
-# 使用DataBinding精简代码
 
-在构建布局的时候，是不是感到要写很多的 `findViewById` 很浪费时间呢？尤其是布局文件变化的时候，也要在 `Activity` 中更改很多内容，极大的降低了开发效率，而谷歌在JetPack中提供了一种十分有效的方法来精简代码结构，提升开发效率，那就是 `DataBinding` 下面来介绍 `DataBinding` 的使用
+# 使用 DataBinding 精简代码
+
+在构建布局的时候，是不是感到要写很多的 `findViewById` 很浪费时间呢？尤其是布局文件变化的时候，也要在 `Activity` 中更改很多内容，极大的降低了开发效率，而谷歌在 JetPack 中提供了一种十分有效的方法来精简代码结构，提升开发效率，那就是 `DataBinding` 下面来介绍 `DataBinding` 的使用
 
 ## 用到的依赖
 
@@ -76,6 +77,7 @@ android {
 添加 `DataBinding` 之后， `setContentView` 就不能继续使用了，这里需要用到新的方法绑定布局
 
 ### 删除旧布局
+
 删除 `onCreate` 方法中的 `setContentView` 那一行的代码
 
 ### 构建 `DataBinding` 的引用
@@ -84,7 +86,7 @@ android {
 
 比如：
 
-- `activity_main.xml`  --> `ActivityMainBinding`
+- `activity_main.xml` --> `ActivityMainBinding`
 - `activity_test` --> `ActivityTestBinding`
 - `my_own_layout_for_test.xml` --> `MyOwnLayoutForTestBinding`
 
@@ -109,6 +111,7 @@ activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_mai
 这里搭建了一个很简单的布局，代码是完整的，之后解释。
 
 `activity_main.xml`
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
@@ -149,6 +152,7 @@ activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_mai
 ```
 
 `MyViewModel.java`
+
 ```java
 package com.aimerneige.databindingdemo;
 
@@ -174,6 +178,7 @@ public class MyViewModel extends ViewModel {
 ```
 
 `MainActivity.java`
+
 ```java
 package com.aimerneige.databindingdemo;
 
@@ -217,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
     </data>
 ```
 
-然后就可以在布局内写一些类似java代码的东西
+然后就可以在布局内写一些类似 java 代码的东西
 
 可以通过如下方法访问 `ViewModel` 中的变量或者方法
 

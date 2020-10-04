@@ -4,13 +4,14 @@ date: 2020-01-24 16:11:30
 tags: Ubuntu
 category: Linux
 ---
+
 # 前言
 
-之前由于感兴趣而涉足Linux领域，在虚拟机内尝试了Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了Ubuntu18.04。
+之前由于感兴趣而涉足 Linux 领域，在虚拟机内尝试了 Ubuntu，可惜虚拟机内性能有限，于是以双系统的形式安装了 Ubuntu18.04。
 
-经过一段时间的使用后，感觉Ubuntu完全可以作为日常系统使用，于是放弃了bug不断的Windows系统，做好备份后直接全盘安装了Ubuntu系统，Windows下的软件找不到替代品就转向虚拟机使用。
+经过一段时间的使用后，感觉 Ubuntu 完全可以作为日常系统使用，于是放弃了 bug 不断的 Windows 系统，做好备份后直接全盘安装了 Ubuntu 系统，Windows 下的软件找不到替代品就转向虚拟机使用。
 
-个人感觉Ubuntu是完全可以替代Windows日常使用的，以下是Ubuntu相比于Windows的一些优点和不足
+个人感觉 Ubuntu 是完全可以替代 Windows 日常使用的，以下是 Ubuntu 相比于 Windows 的一些优点和不足
 
 ## 优点
 
@@ -22,29 +23,29 @@ category: Linux
 
 ## 不足
 
-1. 很多软件不支持Linux，只能在Windows上运行
-2. 几乎90%的游戏都不支持Linux
+1. 很多软件不支持 Linux，只能在 Windows 上运行
+2. 几乎 90%的游戏都不支持 Linux
 3. 需要学习命令行
 4. 界面丑
 
 对策：
 
-1. Windows下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用Wine
-2. 游戏还是不要玩了，装个Ubuntu学Linux顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统
+1. Windows 下的软件可以直接在虚拟机下运行，不想挂个虚拟机的话也可以考虑使用 Wine
+2. 游戏还是不要玩了，装个 Ubuntu 学 Linux 顺带还能帮你戒游戏，实在需要玩游戏的可以使用双系统
 3. 命令行也不是特别难，遇到问题谷歌一下就行了
-4. 至于界面丑，我指的是Ubuntu18.04及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的Ubuntu19.10界面还是十分惊艳的
+4. 至于界面丑，我指的是 Ubuntu18.04 及 之前的版本，这些问题可以通过安装主题和图标包来解决，而最新的 Ubuntu19.10 界面还是十分惊艳的
 
-# Ubuntu的安装
+# Ubuntu 的安装
 
-访问Ubuntu官网下载最新的镜像文件
+访问 Ubuntu 官网下载最新的镜像文件
 
-使用Etcher写入U盘作为启动盘
+使用 Etcher 写入 U 盘作为启动盘
 
-通过U盘启动系统
+通过 U 盘启动系统
 
 依照图形化安装程序进行安装
 
-系统安装好之后就可以开始使用激动人心的Ubuntu19.10了！
+系统安装好之后就可以开始使用激动人心的 Ubuntu19.10 了！
 
 （Emmmm，这个之后补图详细介绍吧）
 
@@ -56,28 +57,28 @@ category: Linux
 
 ## 换源
 
-俗话说的好，装好Linux后第一件事就是换源。
+俗话说的好，装好 Linux 后第一件事就是换源。
 
 由于不同地区网络不同，我用起来很快的源你用可能会很慢，所以这里推荐大家自己百度，多试几个，选一个稳定高速的。
 
-实际上Ubuntu官方源在国内也是可以直接用的，博主就没有更换，默认官方源使用。
+实际上 Ubuntu 官方源在国内也是可以直接用的，博主就没有更换，默认官方源使用。
 
-可以通过speedtest工具检测网络问题是否是由于网卡驱动导致。
+可以通过 speedtest 工具检测网络问题是否是由于网卡驱动导致。
 
-### 首先安装python3
+### 首先安装 python3
 
 ```shell
 sudo apt install python3 -y
 ```
 
-### 安装pip
+### 安装 pip
 
 ```shell
 sudo apt install python-pip -y
 
 ```
 
-### 安装speedtest工具
+### 安装 speedtest 工具
 
 ```shell
 sudo pip install speedtest-cli
@@ -89,7 +90,7 @@ sudo pip install speedtest-cli
 speedtest
 ```
 
-安装之后随时都可以使用speedtest指令测速，有关该python小工具的更多功能请自行谷歌
+安装之后随时都可以使用 speedtest 指令测速，有关该 python 小工具的更多功能请自行谷歌
 
 如果测速结果正常但是安装软件却很慢说明网卡没有问题，可以考虑更换国内镜像源
 
@@ -103,13 +104,13 @@ sudo apt update && sudo apt upgrade
 
 ## 安装开发环境
 
-### 安装git
+### 安装 git
 
 ```shell
 sudo apt install git
 ```
 
-### 安装java运行环境
+### 安装 java 运行环境
 
 #### jre
 
@@ -123,37 +124,37 @@ sudo apt install openjdk-8-jre
 sudo apt install openjdk-8-jdk
 ```
 
-### 安装gcc编译器
+### 安装 gcc 编译器
 
 ```shell
 sudo apt install gcc
 ```
 
-### 安装g++编译器
+### 安装 g++编译器
 
 ```shell
 sudo apt install g++
 ```
 
-### 安装adb调试工具
+### 安装 adb 调试工具
 
 ```shell
 sudo apt install adb
 ```
 
-## 安装chrome
+## 安装 chrome
 
-这条终端指令安装的是开源的chromium
+这条终端指令安装的是开源的 chromium
 
 ```shell
 sudo apt install chromium-browser
 ```
 
-如果想要正式版的chrome可以去chrome官网下载deb包安装
+如果想要正式版的 chrome 可以去 chrome 官网下载 deb 包安装
 
-## 更换vim
+## 更换 vim
 
-系统自带的vi太难用了，安装vim替换
+系统自带的 vi 太难用了，安装 vim 替换
 
 ```shell
 sudo apt install vim
@@ -161,7 +162,7 @@ sudo apt install vim
 
 当然你也可以使用`gedit`或者`nano`
 
-## 安装typora
+## 安装 typora
 
 装机必备啊，写博客什么的很舒服。
 
@@ -180,7 +181,7 @@ sudo apt-get install typora
 
 ## 软件
 
-在官网下载deb包进行安装
+在官网下载 deb 包进行安装
 
 VSC
 VirtuaBox
@@ -189,9 +190,9 @@ VirtuaBox
 
 ## 等宽字体
 
-下载FiraCode字体文件
+下载 FiraCode 字体文件
 
-将otf字体文件保存到一文件夹内，这里以`~/Downloads/FiraCode`为例
+将 otf 字体文件保存到一文件夹内，这里以`~/Downloads/FiraCode`为例
 
 在`/usr/local/share/fonts/`目录下创建自定义文件夹名，这里以`FiraCode`为例
 
@@ -200,7 +201,7 @@ cd /usr/local/hare/fonts/
 mkdir FiraCode
 ```
 
-cd到字体文件目录
+cd 到字体文件目录
 
 ```shell
 cd ~/Downloads/FiraCode/
@@ -225,11 +226,11 @@ cd /usr/local/share/fonts/FiraCode/
 sudo fc-cache -fv
 ```
 
-## 配置VSC
+## 配置 VSC
 
 ### 调整字体
 
-更改字体为FiraCode
+更改字体为 FiraCode
 
 更改字体大小，粗度
 
@@ -241,7 +242,7 @@ sudo fc-cache -fv
 `Material Icon Theme`
 `Material Theme`
 
-#### C语言
+#### C 语言
 
 `C/C++`
 `Code Runner`
@@ -255,7 +256,7 @@ sudo fc-cache -fv
 
 ### 按需下载其他扩展包
 
-## 配置AndroidStudio
+## 配置 AndroidStudio
 
 官网下载安装包
 
@@ -267,7 +268,7 @@ sudo fc-cache -fv
 mv /opt
 ```
 
-cd到安装目录
+cd 到安装目录
 
 ```shell
 cd /opt/android-studio/bin
@@ -304,4 +305,4 @@ StartupNotify=true
 StartupWMClass=android-studio
 ```
 
-JB全家桶均可按照此方法安装，具体配置文件建议谷歌
+JB 全家桶均可按照此方法安装，具体配置文件建议谷歌

@@ -4,6 +4,7 @@ date: 2020-08-10 00:50:41
 tags: Android
 category: Program
 ---
+
 # Android Develop Data Save
 
 ## Save data to file
@@ -31,7 +32,7 @@ fun save(inputText: String) {
 ### load data
 
 ```kotlin
-// This function will try to load the data at a file named "data" 
+// This function will try to load the data at a file named "data"
 // which is on /data/data/com.aimerneige.example/files/data
 fun load(): String {
     // a StringBuilder to load data
@@ -135,7 +136,6 @@ button_load.setOnClickListener {
 ```
 
 In this way, all of the file will saved into the file `/data/data/{package-name}/shared_prefs/{file-name}.xml`.
-
 
 Or, you can get a SharedPreferences in this way:
 

@@ -4,10 +4,11 @@ date: 2020-09-05 17:43:46
 tags: Android
 category: Program
 ---
+
 # Dark Mode On Android
 
 > In this example, I am using Material Design. But you can also use the `Theme.AppCompat.DayNight`.
-> 
+>
 > This is a simple way to adapt a dark mode, if you wants more, check for GitHub or Internet.
 
 ## Change the style
@@ -57,7 +58,6 @@ But if you have these color resource on `values/colors.xml` which is not used fo
 ```
 
 So, If you want to change the color on night mode, just add it on `values-night/colors.xml`. AndroidStudio will use colors in `values/colors.xml` on default and use colors in `values-night/colors.xml` when in dark mode.
-
 
 ## Adapt themes
 

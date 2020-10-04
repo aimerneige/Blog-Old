@@ -4,13 +4,14 @@ date: 2020-02-20 22:21:25
 tags: Android
 category: Program
 ---
+
 # 使用 `ViewModel` 管理布局上的数据
 
-如果不进行处理的话，布局上的临时数据可能会因为屏幕反转，切换系统语言等而消失，但是处理过程略微繁琐，较为麻烦，但是谷歌为我们提供了一种更加简洁的方式来管理界面数据，那就是ViewModel。
+如果不进行处理的话，布局上的临时数据可能会因为屏幕反转，切换系统语言等而消失，但是处理过程略微繁琐，较为麻烦，但是谷歌为我们提供了一种更加简洁的方式来管理界面数据，那就是 ViewModel。
 
 ## 构建自己的 `ViewModel` 类
 
-新建Java类，继承至`ViewModel`，名字自定义，这里以`MyViewModel`为例。
+新建 Java 类，继承至`ViewModel`，名字自定义，这里以`MyViewModel`为例。
 
 ```java
 package com.aimerneige.viewmoudeltest;
@@ -21,7 +22,7 @@ public class MyViewMoude extends ViewModel {
 }
 ```
 
-新建好类之后，直接将需要用到的数据填写在内部，可以直接使用public的数据类型（不推荐），或者使用private数据加get方法。
+新建好类之后，直接将需要用到的数据填写在内部，可以直接使用 public 的数据类型（不推荐），或者使用 private 数据加 get 方法。
 
 ```java
 package com.aimerneige.viewmoudletest;
@@ -46,7 +47,7 @@ public class MyViewMoude extends ViewModel {
 
 然后把`ViewModel`当成一个智能地存储数据的结构体使用即可。
 
-## 在Activity中使用ViewModel
+## 在 Activity 中使用 ViewModel
 
 在`MainActivity`内构建`MyViewMoude`的引用
 
@@ -54,7 +55,7 @@ public class MyViewMoude extends ViewModel {
     MyViewMoude myViewMoude;
 ```
 
-在onCreate方法内获得MyViewMoude的实体
+在 onCreate 方法内获得 MyViewMoude 的实体
 
 ```java
     myViewMoude = ViewModelProviders.of(this).get(MyViewMoude.class);
@@ -64,7 +65,7 @@ public class MyViewMoude extends ViewModel {
 
 ```java
     textView.setText(String.valueOf(myViewMoude.number));
-    
+
     textView.setText(myViewMoude.test);
 
     textView.setText(String.valueOf(myViewMoude.getAge()));
@@ -83,7 +84,7 @@ ViewModelProviders.of()目前已被官方弃用[官方文档](https://developer.
 > ```
 >
 > 替换为：
-> 
+>
 > ```java
 >     boardViewModel = ViewModelProvider(this).get(BoardViewModel::class.java)
 > ```

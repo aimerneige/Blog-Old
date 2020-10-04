@@ -4,9 +4,10 @@ date: 2020-05-28 23:10:07
 tags: Python
 category: Program
 ---
-# 每天一个Python小知识-assert
 
-首先来看下w3schools的解释
+# 每天一个 Python 小知识-assert
+
+首先来看下 w3schools 的解释
 
 > ### Example
 >
@@ -14,10 +15,10 @@ category: Program
 >
 > ```python
 > x = "hello"
-> 
+>
 > #if condition returns True, then nothing happens:
 > assert x == "hello"
-> 
+>
 > #if condition returns False, AssertionError is raised:
 > assert x == "goodbye"
 > ```
@@ -38,14 +39,14 @@ category: Program
 >
 > ```python
 > x = "hello"
-> 
+>
 > #if condition returns False, AssertionError is raised:
 > assert x == "goodbye", "x should be 'hello'"
 > ```
 >
 > 来源： https://www.w3schools.com/python/ref_keyword_assert.asp
 
-帮助那些英语不好的python学习者翻译一下
+帮助那些英语不好的 python 学习者翻译一下
 
 ---
 
@@ -67,7 +68,7 @@ assert x == "goodbye"
 
 当调试代码的时候，会使用 `assert` 关键字。
 
- `assert` 关键字可以允许你测试你代码中的一个条件判断的返回值是否返回True，如果不是的话，程序将会抛出一个`AssertionError` 。
+`assert` 关键字可以允许你测试你代码中的一个条件判断的返回值是否返回 `True`，如果不是的话，程序将会抛出一个`AssertionError` 。
 
 你可以写一条用来在条件返回假时打印的信息，测试下面的示例代码：
 
@@ -135,7 +136,7 @@ assert x == "goodbye", "x should be 'hello'"
 > Traceback (most recent call last):
 >   File "<stdin>", line 1, in <module>
 > AssertionError
-> 
+>
 > >>> assert 1==2, '1 不等于 2'
 > Traceback (most recent call last):
 >   File "<stdin>", line 1, in <module>
@@ -150,7 +151,7 @@ assert x == "goodbye", "x should be 'hello'"
 > > ```python
 > > import sys
 > > assert ('linux' in sys.platform), "该代码只能在 Linux 下执行"
-> > 
+> >
 > > # 接下来要执行的代码
 > > ```
 >

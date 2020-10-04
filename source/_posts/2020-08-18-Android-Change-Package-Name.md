@@ -4,6 +4,7 @@ date: 2020-08-18 00:50:53
 tags: Android
 category: Program
 ---
+
 # Change Package Name Quickly
 
 Sometimes, we may need to change the package name of our Android Project. Maybe the package is not suitable or we get a better package name. But that's doesn't matter, we just need to change it. So, how we can change a package name? Here are the solution.
