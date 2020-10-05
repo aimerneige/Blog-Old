@@ -4,13 +4,14 @@ date: 2020-05-27 23:36:38
 tags: Python
 category: Program
 ---
+
 # 使用 pillow 库快速将漫画转化为 pdf 便于转发与阅读
 
 ## 介绍
 
-使用安卓手机阅读一些漫画的时候，因为屏幕较小，查看文字的时候需要放大，很麻烦。博主虽然有一个iPad4，屏幕够大，但是把这么多图片文件发送到iPad上面十分的麻烦，一天，偶然看到了一个pdf格式的漫画，在iPad上面的阅读体验十分棒，于是博主就打算写一个程序来将大量的漫画图片转化为pdf来方便在iPad上阅读。
+使用安卓手机阅读一些漫画的时候，因为屏幕较小，查看文字的时候需要放大，很麻烦。博主虽然有一个 iPad4，屏幕够大，但是把这么多图片文件发送到 iPad 上面十分的麻烦，一天，偶然看到了一个 pdf 格式的漫画，在 iPad 上面的阅读体验十分棒，于是博主就打算写一个程序来将大量的漫画图片转化为 pdf 来方便在 iPad 上阅读。
 
-查阅资料，我们会发现 [Pillow](https://github.com/python-pillow/Pillow) 这个第三方python库可以来处理图片，同时也可以将大量的图片转化为pdf文档。
+查阅资料，我们会发现 [Pillow](https://github.com/python-pillow/Pillow) 这个第三方 python 库可以来处理图片，同时也可以将大量的图片转化为 pdf 文档。
 
 简单地查看下 [官方文档](https://pillow.readthedocs.io/en/stable/) 。
 
@@ -20,19 +21,19 @@ emmm，官方文档的东西有点多，为了快速解决问题还是直接查�
 
 > ```python
 > from PIL import Image
-> 
+>
 > image1 = Image.open(r'C:\Users\Ron\Desktop\Test\image1.png')
 > image2 = Image.open(r'C:\Users\Ron\Desktop\Test\image2.png')
 > image3 = Image.open(r'C:\Users\Ron\Desktop\Test\image3.png')
 > image4 = Image.open(r'C:\Users\Ron\Desktop\Test\image4.png')
->  
+>
 > im1 = image1.convert('RGB')
 > im2 = image2.convert('RGB')
 > im3 = image3.convert('RGB')
 > im4 = image4.convert('RGB')
-> 
+>
 > imagelist = [im2,im3,im4]
-> 
+>
 > im1.save(r'C:\Users\Ron\Desktop\Test\myImages.pdf',save_all=True, append_images=imagelist)
 > ```
 >
@@ -40,7 +41,7 @@ emmm，官方文档的东西有点多，为了快速解决问题还是直接查�
 
 不需要仔细看又臭又长的官方文档了，nice！
 
-了解了如何使用这个强大的库，就可以开始写代码了，vsc一条龙服务!
+了解了如何使用这个强大的库，就可以开始写代码了，vsc 一条龙服务!
 
 **代码很简单，直接上源码了：**
 
@@ -116,10 +117,10 @@ https://www.w3schools.com/python/ref_string_zfill.asp
 
 ## 软件效率
 
-值得一提的是转化效率，200多页，大概100多M的漫(ben)画(zi)转化只用了不到10秒钟，转化后pdf文件只有60多M，还有压缩效果，nice。pillow牛逼就完事了。~~可以使用iPad继续愉快的看漫(ben)画(zi)了。~~
+值得一提的是转化效率，200 多页，大概 100 多 M 的漫(ben)画(zi)转化只用了不到 10 秒钟，转化后 pdf 文件只有 60 多 M，还有压缩效果，nice。pillow 牛逼就完事了。~~可以使用 iPad 继续愉快的看漫(ben)画(zi)了。~~
 
 ## 后记
 
-本来想上传GitHub的，但是代码太简单了，干脆直接水一篇博客算了。
+本来想上传 GitHub 的，但是代码太简单了，干脆直接水一篇博客算了。
 
-话说如果把漫(ben)画(zi)连代码一起打包发到GitHub上会不会被ban帐号啊？（听说GitHub在打击网盘行为？）~~传播淫秽物品罪了解一下？~~
+话说如果把漫(ben)画(zi)连代码一起打包发到 GitHub 上会不会被 ban 帐号啊？（听说 GitHub 在打击网盘行为？）~~传播淫秽物品罪了解一下？~~

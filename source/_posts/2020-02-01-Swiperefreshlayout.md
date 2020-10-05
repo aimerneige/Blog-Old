@@ -4,6 +4,7 @@ date: 2020-02-01 01:45:42
 tags: Android
 category: Program
 ---
+
 # Swiperefreshlayout
 
 [GoogleDoc](https://developer.android.google.cn/jetpack/androidx/releases/swiperefreshlayout?hl=zh-cn)
@@ -20,14 +21,14 @@ category: Program
 >  dependencies {
 >      implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 >  }
->  
+>
 > ```
 >
 > 如需详细了解依赖项，请参阅[添加编译依赖项](https://developer.android.google.cn/studio/build/dependencies.html?hl=zh-cn)。
 
 ## 添加布局
 
-在xml布局文件中添加SwipeRefreshLayout，并将WebView内嵌在SwipeRefreshLayout中。
+在 xml 布局文件中添加 SwipeRefreshLayout，并将 WebView 内嵌在 SwipeRefreshLayout 中。
 
 > 布局这里拷贝了别人的代码，结果软件闪退，搞了半天找不到原因，重开了一个项目，根据代码提示写了一份居然可以运行，分明代码一样的，好迷啊。。。。。
 
@@ -56,7 +57,7 @@ category: Program
 </LinearLayout>
 ```
 
-SwipeRefreshLayout类似ScrollView，内部只能有一个部件，但是你可以这样玩、（手动滑稽
+SwipeRefreshLayout 类似 ScrollView，内部只能有一个部件，但是你可以这样玩、（手动滑稽
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -204,7 +205,7 @@ SwipeRefreshLayout类似ScrollView，内部只能有一个部件，但是你可�
 
 ## 编写代码部分
 
-先放一个完整的源码，看不懂直接跳过，下面介绍关于Swiperefreshlayout的核心代码
+先放一个完整的源码，看不懂直接跳过，下面介绍关于 Swiperefreshlayout 的核心代码
 
 ```java
 package com.aimerneige.bingsearchlite;

@@ -4,6 +4,7 @@ date: 2020-07-26 07:58:20
 tags: Ubuntu
 category: Linux
 ---
+
 # Enable USB for VirtualBox on Ubuntu
 
 Different from Windows, if you wants to use usb enabled to VirtualBox, you must edit a config file, which is needn't on Windows.
@@ -31,7 +32,8 @@ If you wants to edit it with GUI, just use this:
 ```bash
 sudo apt-get install gnome-system-tools
 ```
-With this tool, you just to select your account and click **Manage Groups** and add the *vboxusers*
+
+With this tool, you just to select your account and click **Manage Groups** and add the _vboxusers_
 
 Or, you can also edit the config file manually.
 

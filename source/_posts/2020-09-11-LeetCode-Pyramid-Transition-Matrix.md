@@ -4,9 +4,10 @@ date: 2020-09-11 15:30:34
 tags: LeetCode
 category: Program
 ---
+
 # Pyramid Transition Matrix
 
->  https://leetcode.com/problems/pyramid-transition-matrix/
+> https://leetcode.com/problems/pyramid-transition-matrix/
 
 > We are stacking blocks to form a pyramid. Each block has a color which is a one letter string.
 >
@@ -28,11 +29,9 @@ category: Program
 >      G   E
 >     / \ / \
 >    B   C   D
-> 
+>
 > We are allowed to place G on top of B and C because BCG is an allowed triple.  Similarly, we can place E on top of C and D, then A on top of G and E.
 > ```
->
->  
 >
 > **Example 2:**
 >
@@ -53,7 +52,7 @@ category: Program
 ```java
 class Solution {
     Map<String, List<String>> map;
-    
+
     public boolean pyramidTransition(String bottom, List<String> allowed) {
         map = new HashMap<>();
         for(String s : allowed) {
@@ -61,16 +60,16 @@ class Solution {
             String value = s.substring(2, 3);
             map.putIfAbsent(key, new ArrayList<>());
             map.get(key).add(value);
-        }        
+        }
         return solve(bottom);
     }
-    
+
     private boolean solve(String bottom) {
         if(bottom.length() == 1) {
             return true;
         }
         List<String> nextBottoms = new ArrayList<>();
-        generateNextBottoms(bottom, nextBottoms, "", 0);        
+        generateNextBottoms(bottom, nextBottoms, "", 0);
         for(String next : nextBottoms) {
             if(solve(next)) {
                 return true;
@@ -78,7 +77,7 @@ class Solution {
         }
         return false;
     }
-    
+
     private void generateNextBottoms(String bottom, List<String> res, String cur, int i) {
         if(cur.length() == bottom.length() - 1) {
             res.add(cur);

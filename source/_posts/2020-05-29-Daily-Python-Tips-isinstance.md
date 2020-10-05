@@ -4,9 +4,10 @@ date: 2020-05-29 09:38:41
 tags: Python
 category: Program
 ---
-# 每天一个Python小知识-isinstance
 
-首先来看下w3schools的解释：
+# 每天一个 Python 小知识-isinstance
+
+首先来看下 w3schools 的解释：
 
 > ### Example
 >
@@ -16,28 +17,28 @@ category: Program
 > x = isinstance(5, int)
 > ```
 >
-> ------
+> ---
 >
 > ## Definition and Usage
 >
 > The `isinstance()` function returns `True` if the specified object is of the specified type, otherwise `False`.
 >
-> If the type parameter is a tuple, this function will return `True` if the object is *one* of the types in the tuple.
+> If the type parameter is a tuple, this function will return `True` if the object is _one_ of the types in the tuple.
 >
-> ------
+> ---
 >
 > ## Syntax
 >
-> isinstance(*object*, *type*)
+> isinstance(_object_, _type_)
 >
 > ## Parameter Values
 >
 > | Parameter | Description                                           |
 > | :-------- | :---------------------------------------------------- |
-> | *object*  | Required. An object.                                  |
-> | *type*    | A type or a class, or a tuple of types and/or classes |
+> | _object_  | Required. An object.                                  |
+> | _type_    | A type or a class, or a tuple of types and/or classes |
 >
-> ------
+> ---
 >
 > ## More Examples
 >
@@ -56,13 +57,13 @@ category: Program
 > ```python
 > class myObj:
 >   name = "John"
-> 
+>
 > y = myObj()
-> 
+>
 > x = isinstance(y, myObj)
 > ```
 >
-> ------
+> ---
 >
 > ## Related Pages
 >
@@ -70,13 +71,13 @@ category: Program
 >
 > 来源： https://www.w3schools.com/python/ref_func_isinstance.asp
 
-帮助那些英语不好的python学习者翻译一下：
+帮助那些英语不好的 python 学习者翻译一下：
 
 ---
 
 ### 示例
 
-检查数字5是否是一个整数。
+检查数字 5 是否是一个整数。
 
 ```python
 x = isinstance(5, int)
@@ -98,8 +99,8 @@ isinstance(object, type)
 
 | 参数     | 描述                                   |
 | :------- | :------------------------------------- |
-| *object* | 必须。 一个示例对象。                  |
-| *type*   | 基本类型或者类，或是由他们组成的元组。 |
+| _object_ | 必须。 一个示例对象。                  |
+| _type_   | 基本类型或者类，或是由他们组成的元组。 |
 
 ## 更多示例
 
@@ -126,7 +127,7 @@ x = isinstance(y, myObj)
 
 ## 相关内容：
 
- [issubclass()](https://www.w3schools.com/python/ref_func_issubclass.asp) 函数用来检查一个对象是否是另一个对象的子类。
+[issubclass()](https://www.w3schools.com/python/ref_func_issubclass.asp) 函数用来检查一个对象是否是另一个对象的子类。
 
 ---
 
@@ -162,7 +163,7 @@ x = isinstance(y, myObj)
 >
 > 如果对象的类型与参数二的类型（classinfo）相同则返回 True，否则返回 False。。
 >
-> ------
+> ---
 >
 > ## 实例
 >
@@ -183,16 +184,16 @@ x = isinstance(y, myObj)
 > ```bash
 > class A:
 >     pass
->  
+>
 > class B(A):
 >     pass
->  
+>
 > isinstance(A(), A)    # returns True
 > type(A()) == A        # returns True
 > isinstance(B(), A)    # returns True
 > type(B()) == A        # returns False
 > ```
-> 
+>
 > 来源： https://aimerneige.com/2020/05/29/Daily-Python-Tips-isinstance/
 
 更多示例：

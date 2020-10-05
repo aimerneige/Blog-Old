@@ -4,6 +4,7 @@ date: 2020-08-10 00:01:10
 tags: Software
 category: Others
 ---
+
 # How to install ffmpeg on Windows 10
 
 Go [this link](https://ffmpeg.zeranoe.com/builds/) and download a build package.

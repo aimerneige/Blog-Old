@@ -4,6 +4,7 @@ date: 2020-02-20 23:40:51
 tags: Android
 category: Program
 ---
+
 # 使用 `ProgressDialog` 实现加载提示
 
 在进行一些耗时操作的时候，经常需要加载提示框来提醒用户当前在进行耗时操作，需要等待。
@@ -12,7 +13,7 @@ category: Program
 
 ## 构建 `ProgressDialog` 对象
 
-你可以在耗时操作开始前临时建立新的 `ProgressDialog` 对象，你也同样可以在Activity中构建 `ProgressDialog` 的引用，并在 `OnCreate` 方法内构建实体，在需要的时候直接显示和隐藏。
+你可以在耗时操作开始前临时建立新的 `ProgressDialog` 对象，你也同样可以在 Activity 中构建 `ProgressDialog` 的引用，并在 `OnCreate` 方法内构建实体，在需要的时候直接显示和隐藏。
 
 其中前者相对灵活，但是使用范围有限，后者使用范围较广，但是可以会使得 `OnCreate` 中的代码较为繁琐。
 

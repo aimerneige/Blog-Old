@@ -4,6 +4,7 @@ date: 2020-09-22 13:29:32
 tags: Ubuntu
 category: Linux
 ---
+
 # Ubuntu 20.04 Resolution Error Fix
 
 After upgrade my ubuntu 20.04, I find the system ui resolution is small and looks ugly. I search google for this which tell me to reinstall my Graphics Card Driver. But it doesn't work, so I have to try it myself. And here are my solutions:

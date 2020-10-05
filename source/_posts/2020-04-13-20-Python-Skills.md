@@ -4,17 +4,18 @@ date: 2020-04-13 20:27:22
 tags: Python
 category: Program
 ---
-# 20个Python进阶技巧
 
-> 本来是在查资料，无意间看到了这个[知乎文章](https://zhuanlan.zhihu.com/p/89998429)，感觉内容值得学习，但是排版实在难受，代码和注释混在一起，没有换行，同时解释也很奇怪（感觉是机翻的），当我无法忍受想关闭网页的时候，发现这篇文章是翻译自[Medium](https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124)的文章，但是原文章是英语写的，为了帮到那些英语不太好的Python学习者，同时方便自己之后看，于是写了这篇博文（算是笔记吧）
+# 20 个 Python 进阶技巧
 
-> 基于Medium的文章 [《20 Python Snippets You Should Learn Today》](https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124) ，除了翻译外添加了自己的解释。水平有限，如果有错误欢迎读者指正。
+> 本来是在查资料，无意间看到了这个[知乎文章](https://zhuanlan.zhihu.com/p/89998429)，感觉内容值得学习，但是排版实在难受，代码和注释混在一起，没有换行，同时解释也很奇怪（感觉是机翻的），当我无法忍受想关闭网页的时候，发现这篇文章是翻译自[Medium](https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124)的文章，但是原文章是英语写的，为了帮到那些英语不太好的 Python 学习者，同时方便自己之后看，于是写了这篇博文（算是笔记吧）
+
+> 基于 Medium 的文章 [《20 Python Snippets You Should Learn Today》](https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124) ，除了翻译外添加了自己的解释。水平有限，如果有错误欢迎读者指正。
 >
-> 大部分示例代码均引用自  **Medium** [《20 Python Snippets You Should Learn Today》](https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124)
+> 大部分示例代码均引用自 **Medium** [《20 Python Snippets You Should Learn Today》](https://medium.com/better-programming/20-python-snippets-you-should-learn-today-8328e26ff124)
 
 ## 1 反转字符串
 
-下面的代码使用Python切片操作来反转字符串。
+下面的代码使用 Python 切片操作来反转字符串。
 
 ```python
 # Reversing a string using slicing
@@ -28,9 +29,9 @@ print(reversed_string)
 # EDCBA
 ```
 
-这里用到的是Python[切片](https://www.liaoxuefeng.com/wiki/1016959663602400/1017269965565856)
+这里用到的是 Python[切片](https://www.liaoxuefeng.com/wiki/1016959663602400/1017269965565856)
 
-切片某种意义上就是对如下代码的书写进行了简化（不考虑Python中-1的情况）
+切片某种意义上就是对如下代码的书写进行了简化（不考虑 Python 中-1 的情况）
 
 ```c
 // [a:b:c]
@@ -43,7 +44,7 @@ for (int i = a, i < b; i = i + c) {
 
 ## 2 转化为标题（首字母大写）
 
-下面的代码把字符串转化为标题格式。这里用了字符串类的title()方法来实现。
+下面的代码把字符串转化为标题格式。这里用了字符串类的 title()方法来实现。
 
 ```python
 my_string = "my name is chaitanya baweja"
@@ -57,7 +58,7 @@ print(new_string)
 # My Name Is Chaitanya Baweja
 ```
 
-把字符串中单词的首字母都大写，转变为标题格式，就是调用了字符串类的title()方法，很简单，不需要解释。
+把字符串中单词的首字母都大写，转变为标题格式，就是调用了字符串类的 title()方法，很简单，不需要解释。
 
 值得一提的是，虽然叫 `title`， 但是它是完全不加判断地把所有单词的首字母大写，并没有遵循英语的语法规则。
 
@@ -67,7 +68,7 @@ print(new_string)
 >
 > 1. 标题的第一个单词的首字母要大写；
 > 2. 冠词都不需要大写；
-> 3. 字母个数多于3个（不含3个）的介词、连词的首字母要大写；
+> 3. 字母个数多于 3 个（不含 3 个）的介词、连词的首字母要大写；
 > 4. 名词、动词、形容词、副词、代词、感叹词首字母应大写；
 > 5. 大写所有英语中要求大写的单词。如月份、人名、地名等等。
 >
@@ -116,7 +117,7 @@ print(new_string)
 
 效果是把字符串中用到的字符都提取出来，构成一个新的字符串。
 
-比如对 `hello`  ，它内部包含 `h, e, l, o` 这几四字符，于是我们就会得到一个由这四个字符构成的新字符串，顺序通常是乱的，比如 `oelh` 就是一种可能的结果。
+比如对 `hello` ，它内部包含 `h, e, l, o` 这几四字符，于是我们就会得到一个由这四个字符构成的新字符串，顺序通常是乱的，比如 `oelh` 就是一种可能的结果。
 
 输出结果并没有排序，是随机的，比如你期望如下代码返回`abcdefghijklmnopqrstuvwxyz .`，但是结果却是杂乱的。
 
@@ -130,15 +131,15 @@ print(new_string)
 # trzixup.efbajovcdnslywhg qmk
 ```
 
-这里用到了python中的 [集合](https://www.runoob.com/python3/python3-set.html) 和 [join()方法](https://www.runoob.com/python/att-string-join.html)
+这里用到了 python 中的 [集合](https://www.runoob.com/python3/python3-set.html) 和 [join()方法](https://www.runoob.com/python/att-string-join.html)
 
-首先利用集合的唯一性，用原始字符串构造一个集合，然后利用join()方法把集合内的元素用空字符串进行连接，相当于将集合内的元素连接成字符串。
+首先利用集合的唯一性，用原始字符串构造一个集合，然后利用 join()方法把集合内的元素用空字符串进行连接，相当于将集合内的元素连接成字符串。
 
-推荐阅读： [《An Introduction to Python Sets - Part I》](https://medium.com/python-pandemonium/https-medium-com-python-pandemonium-an-introduction-to-python-sets-part-i-120974a713be) 
+推荐阅读： [《An Introduction to Python Sets - Part I》](https://medium.com/python-pandemonium/https-medium-com-python-pandemonium-an-introduction-to-python-sets-part-i-120974a713be)
 
-## 4 输出 n次字符串或列表
+## 4 输出 n 次字符串或列表
 
-你可以对字符串或列表使用乘法(*)。这让我们可以按照我们的需求输出多次。
+你可以对字符串或列表使用乘法(\*)。这让我们可以按照我们的需求输出多次。
 
 ```python
 n = 3 # number of repetitions
@@ -167,7 +168,7 @@ my_list = [0]*n # n denotes the length of the required list
 
 列表解析为创建列表提供了一种可以以其他列表为基础来创建新的列表的优雅方式。
 
-下面的代码通过把旧列表中的每个元素都乘以2来创建新列表。 
+下面的代码通过把旧列表中的每个元素都乘以 2 来创建新列表。
 
 ```python
 # Multiplying each element in a list by 2
@@ -184,7 +185,7 @@ print(new_list)
 
 ## 6 交换俩个变量的值
 
-Python使得交换俩个变量的值变得十分简单，并不需要使用另一个变量。
+Python 使得交换俩个变量的值变得十分简单，并不需要使用另一个变量。
 
 ```python
 a = 1
@@ -237,7 +238,7 @@ print(','.join(list_of_strings))
 
 ## 9 检查给定字符串是否为回文（Palindrome）
 
-我们已经讨论了如何反转字符串，因此，在Python中，回文检查变得很简单。
+我们已经讨论了如何反转字符串，因此，在 Python 中，回文检查变得很简单。
 
 ```python
 my_string = "abcba"
@@ -253,9 +254,9 @@ else:
 
 ## 10 列表中元素出现的次数
 
-有很多的方法来做这件事，但是我最喜欢的方法是使用Python中的 `Counter` 类。
+有很多的方法来做这件事，但是我最喜欢的方法是使用 Python 中的 `Counter` 类。
 
-Python的 [Counter](https://docs.python.org/zh-cn/3/library/collections.html#collections.Counter) 会记录容器内每个元素的出现次数。`Counter()` 返回一个字典，字典内以元素为键，出现次数为值。
+Python 的 [Counter](https://docs.python.org/zh-cn/3/library/collections.html#collections.Counter) 会记录容器内每个元素的出现次数。`Counter()` 返回一个字典，字典内以元素为键，出现次数为值。
 
 同样的，我们可以使用函数 `most_common()` 来获得列表中出现次数最多的元素。
 
@@ -276,23 +277,23 @@ print(count.most_common(1)) # most frequent element
 # [('d', 5)]
 ```
 
-使用列表作为参数构建Counter类，返回值即为所需内容。
+使用列表作为参数构建 Counter 类，返回值即为所需内容。
 
 推荐阅读：[《An Introduction to Python Counter》](https://medium.com/datadriveninvestor/an-introduction-to-python-counter-47948fdd9c1a)
 
 ## 11 判断俩个字符串是否为易位词
 
-Counter的一个有趣的应用是判断易位词。
+Counter 的一个有趣的应用是判断易位词。
 
 如果一个单词或者短语是由另一个单词或短语重新排序构成的，那么这个俩单词或者短语就被称为易位词。（百科词条可能会帮到你）
 
-> **易位构词游戏**的英文词汇是 *anagram*，这个词来源于有“反向”或“再次”的含义的[希腊语](https://zh.wikipedia.org/wiki/希腊语)字根*ana-*和有“书写”、“写下”的意思的词根*gramma*。易位构词是一类[文字游戏](https://zh.wikipedia.org/wiki/文字游戏)（更准确地说是一类“词语游戏”），是将组成一个词或短句的字母重新排列顺序，原文中所有字母的每次出现都被使用一次，这样构造出另外一些新的词或短句。
+> **易位构词游戏**的英文词汇是 _anagram_，这个词来源于有“反向”或“再次”的含义的[希腊语](https://zh.wikipedia.org/wiki/希腊语)字根*ana-*和有“书写”、“写下”的意思的词根*gramma*。易位构词是一类[文字游戏](https://zh.wikipedia.org/wiki/文字游戏)（更准确地说是一类“词语游戏”），是将组成一个词或短句的字母重新排列顺序，原文中所有字母的每次出现都被使用一次，这样构造出另外一些新的词或短句。
 >
-> 来源:  [中文维基 易位构词游戏](https://zh.wikipedia.org/wiki/%E6%98%93%E4%BD%8D%E6%9E%84%E8%AF%8D%E6%B8%B8%E6%88%8F)
+> 来源: [中文维基 易位构词游戏](https://zh.wikipedia.org/wiki/%E6%98%93%E4%BD%8D%E6%9E%84%E8%AF%8D%E6%B8%B8%E6%88%8F)
 >
-> 推荐阅读：[百度百科 易位词]([https://baike.baidu.com/item/%E5%8F%98%E4%BD%8D%E8%AF%8D/3844597](https://baike.baidu.com/item/变位词/3844597))  [English wiki Anagram](https://en.wikipedia.org/wiki/Anagram) 
+> 推荐阅读：[百度百科 易位词](<[https://baike.baidu.com/item/%E5%8F%98%E4%BD%8D%E8%AF%8D/3844597](https://baike.baidu.com/item/变位词/3844597)>) [English wiki Anagram](https://en.wikipedia.org/wiki/Anagram)
 
-如果俩个字符串的Counter对象是相同的，那么他们是易位词。
+如果俩个字符串的 Counter 对象是相同的，那么他们是易位词。
 
 ```python
 from collections import Counter
@@ -311,11 +312,11 @@ if cnt_1 == cnt_3:
 
 ## 12 使用 try-except-else
 
-在python中，通过使用try/except代码块可以简单地处理错误。在这个代码块中添加else可能是有用的。
+在 python 中，通过使用 try/except 代码块可以简单地处理错误。在这个代码块中添加 else 可能是有用的。
 
-如果没有错误发生的话，else后的代码就会被执行。
+如果没有错误发生的话，else 后的代码就会被执行。
 
-如果你有一些不管错误是否发生都需要执行的代码，使用finally。
+如果你有一些不管错误是否发生都需要执行的代码，使用 finally。
 
 ```python
 a, b = 1,0
@@ -329,30 +330,30 @@ else:
     print("no exceptions raised")
 finally:
     print("Run this always")
-    
+
 # Output
 # division by zero
 # Run this always
 ```
 
- ```python
+```python
 try:
-    some_dangerous_operation()
-    # something may cause exception
+   some_dangerous_operation()
+   # something may cause exception
 except:
-    exception_handle()
-    # something run when the exception happens
+   exception_handle()
+   # something run when the exception happens
 else:
-    no_exception()
-    # something run when no exception happens
+   no_exception()
+   # something run when no exception happens
 finally:
-    something_must_to_been_done()
-    # something run weather the exception happens or not
- ```
+   something_must_to_been_done()
+   # something run weather the exception happens or not
+```
 
-## 13 使用Enumerate来取得 索引-值 对
+## 13 使用 Enumerate 来取得 索引-值 对
 
-下面的脚本使用了Enumerate来迭代列表中的值及其索引。
+下面的脚本使用了 Enumerate 来迭代列表中的值及其索引。
 
 ```python
 my_list = ['a', 'b', 'c', 'd', 'e']
@@ -388,7 +389,7 @@ print(sys.getsizeof(num))
 
 ## 15 合并俩个字典
 
-在Python 2，我们使用 `update()` 方法来合并俩个字典。
+在 Python 2，我们使用 `update()` 方法来合并俩个字典。
 
 Python 3.5 简化了这个过程。
 
@@ -407,7 +408,7 @@ print(combined_dict)
 
 ## 16 执行一段代码所需时间
 
-下面的代码使用time库计算运行一段代码所需要的时间。
+下面的代码使用 time 库计算运行一段代码所需要的时间。
 
 ```python
 import time
@@ -451,7 +452,7 @@ print(list(deepflatten(l, depth=3)))
 
 ## 18 列表取样
 
-下面的代码生使用 `random` 库从给定的列表中生成了n个随机的样本。
+下面的代码生使用 `random` 库从给定的列表中生成了 n 个随机的样本。
 
 ```python
 import random
@@ -466,7 +467,7 @@ print(samples)
 
 我十分推荐使用 [secrets](https://docs.python.org/3/library/secrets.html) 库来生成用于加密的随机样本。
 
-下面的代码只能在python 3运行。
+下面的代码只能在 python 3 运行。
 
 ```python
 import secrets                              # imports secure module.
