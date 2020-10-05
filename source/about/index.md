@@ -5,7 +5,7 @@ layout: about
 ---
 # About Me
 
-I am just a student learning computer science.
+I am just a student learning IoT.
 
 Email: `aimer.neige@aimerneige.com`
 
