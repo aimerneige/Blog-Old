@@ -16,3 +16,7 @@ After upgrade my ubuntu 20.04, I find the system ui resolution is small and look
 5. All done.
 
 After the system reboot, this problem will appear again. But it really works.
+
+---
+
+This problem solved after a upgrade.
