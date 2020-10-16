@@ -257,3 +257,28 @@ $ gcc -shared -Wl,-soname,libstr.so -o libstr.so.1 string.c
 其中，选项 `-soname,libstr.so` 表示生成动态库时的别名是 `libstr.so`； `-o libstr.so.l` 选项则表示是生成名字为 `libstr.so.1` 的实际动态链接库文件； `-shared` 告诉编译器生成一个动态链接库。
 
 生成动态链接库之后一个很重要的问题就是安装，一般情况下将生成的动态链接库复制到系统默认的动态链接库的搜索路径下，通常有`/lib` 、 `/usr/lib` 、 `/usr/local/lib`，放到以上任何一个目录下都可以。
+
+### 动态链接库的配置
+
+动态链接库不能随意使用，要在运行的程序中使用动态链接库，需要指定系统的动态链接库搜索的路径，让系统找到运行所需的动态链接库才可以。系统中的配置文件 `/etc/ld.so.conf` 是动态链接库的搜索路径配置文件。在这个文件内，存放着可被Linux 共享的动态链接库所在目录的名字（系统目录/lib 、/usr/lib 除外），多个目录名间以空白字符（空格、换行等）或冒号或逗号分隔。查看系统中的动态链接库配置文件的内容：
+
+```bash
+$ cat /etc/ld.so.conf
+include /etc/ld.so.conf.d/*.conf
+```
+
+查看这个文件夹
+
+```bash
+$ ls /etc/ld.so.conf.d
+fakeroot-x86_64-linux-gnu.conf  x86_64-linux-gnu.conf
+i386-linux-gnu.conf             zz_i386-biarch-compat.conf
+libc.conf
+```
+
+从上面的配置文件可以看出， 在系统的动态链接库配置中，包含了该动态库 `/lib/i386-linux-gnu` 、 `/usr/lib/i386-linux-gnu` 和 `/lib/i686- linux-gnu` 、 `/usr/lib/i686-linux-gnu` 四个目录。
+
+### 动态链接库管理命令
+
+为了让新增加的动态链接库能够被系统共享，需要运行动态链接库的管理命令ldconfig 。ldconfig 命令的作用是在系统的默认搜索路径，和动态链接库配置文件中所列出的目录里搜索动态链接库，创建动态链接装入程序需要的链接和缓存文件。搜索完毕后，将结果写入缓存文件／etc/Id.so.cache 中，文件中保存的是已经排好序的动态链接库名字列表。ldconfig 命令行的用法如下，其中选项的含义参见表 2.4 。
+
