@@ -362,6 +362,89 @@ $ export LD_LIBRARY_PATH=/example/ex02: $LD_LIBRARY_PATH
 $ gcc -o test main.c -static -lstr
 ```
 
-### 动态加载库
+## 动态加载库
 
+动态加载库和一般的动态链接库所不同的是，一般动态链接库在程序启动的时候就要寻找动态库，找到库函数；而动态加载库可以用程序的方法来控制什么时候加载。
+
+动态加载库主要有函数 `dlopen()` `dlerror()` `dlsym()` `dlclose()` 。
+
+### 打开动态库 `dlopen()` 函数
+
+函数 `dlopen()` 按照用户指定的方式打开动态链接库，其中参数 `filename` 为动态链接库的文件名，`flag`为打开方式，一般为 `RTLD_LASY`， 函数的返回值为库的指针。其函数原型如下：
+
+```c
+void *dlopen(const char *filename, int flag);
+```
+
+例如，下面的代码使用dlopen 打开当前目录下的动态库libstr.so 。
+
+```c
+void *phandle = dlopen("./libstr.so", RTLD_LAZY);
+```
+
+### 获得函数指针 `dlsym()`
+
+使用动态链接库的目的是调用其中的函数，完成特定的功能。函数 `dlsym()` 可以获得动态链接库中指定函数的指针，然后可以使用这个函数指针进行操作。函数 `dlsym()` 的原型如下：
+
+```c
+void *dlsym(void *handle, char *symbol);
+```
+
+其中参数 `handle` 为 `dlopen()` 打开动态库后返回的句柄，参数 `symbol` 为函数的名称，返回值为函数指针。
+
+### 使用动态加载库的一个例子
+
+下面是一个动态加载库使用的例子。首先使用函数 `dlopen()` 来打开动态链接库，判断是否正常打开，可以使用函数 `dlerror()` 判断错误。如果上面的过程正常，使用函数 `dlsym()` 来获得动态链接库中的某个函数，可以使用这个函数来完成某些功能。其代码如下：
+
+```c
+#include <dlfcn.h>
+
+int main(void)
+{
+    char src[] = "Hello AimerNeige!";
+    int (*pStrLenFun) (char *str);
+    void *phandle = NULL;
+    char *perr = NULL;
+    phandle = dlopen("./libstr.so", RTLD_LAZY);
+
+    if (!phandle)
+    {
+        printf("Failed Load library!\n");
+    }
+    perr = dlerror();
+    if (perr != NULL)
+    {
+        printf("%s\n", perr);
+        return 0;
+    }
+    
+    pStrLenFun = dlsym(phandle, "StrLen");
+    perr = dlerror();
+    if (perr != NULL)
+    {
+        printf("%s\n", perr);
+        return 0;
+    }
+
+    printf("The string length is: %d\n", pStrLenFun(src));
+
+    dlclose(phandle);    
+    return 0;
+}
+```
+
+编译上述文件的时候需要链接动态库 `libdl.so`，使用如下的命令将上述代码编译成可执行文件 `testdl`。命令将 `main.c` 编译成可执行文件 `testdl`，并链接动态链接库 `libdl.so`。
+
+```bash
+$ gcc -o testdl main.c libstr.so -ldl
+```
+
+执行文件 `testdl` 的结果为：
+
+```bash
+$ ./testdl
+string length is: 18
+```
+
+## GCC 常用选项
 

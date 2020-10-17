@@ -7,7 +7,7 @@ category: Others
 
 # MinGW Install For Windows
 
-Click [here](https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/) to download a MinGW setup file.
+Click [here](https://osdn.net/projects/mingw/downloads/68260/mingw-get-setup.exe/) to download the MinGW setup file.
 
 Run the `mingw-get-setup.exe`.
 
