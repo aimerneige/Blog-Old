@@ -429,6 +429,12 @@ links:
       image: 'https://cdn.jsdelivr.net/gh/geekHe-P/PicGo/article/7a2cb9f60c2846322890b138ae849557.jpeg'
     }
     - {
+      title: 'Gaein nidb',
+      intro: 'Gaein nidb的网站',
+      link: 'https://www.gaein.cn/',
+      image: 'https://avatars2.githubusercontent.com/u/36162655?s=460&u=69b5ab41907989a57572a63bea23eccf47203d8d&v=4'
+    }
+    - {
       title: '0047ol',
       intro: '整合稀缺软件仓库',
       link: 'https://www.0047ol.com/',
