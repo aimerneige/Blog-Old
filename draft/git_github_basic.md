@@ -54,7 +54,7 @@
 
 #### 在 Linux 上安装 git
 
-有一些发行版会自带 git，并不需要安装，你可以通过在终端执行 `git` 指令来查看当前系统是否安装了 git，如果没有，可以执行如下命令来安装 git：
+有一些发行版会自带 git，并不需要安装，你可以通过在终端执行 `git` 指令来查看当前系统是否安装了 git，如果没有，可以按照下面的说明安装它：
 
 如果你正在使用 Debian 系操作系统，可以使用如下命令安装：
 
@@ -112,11 +112,15 @@ git config --global https.proxy https://127.0.0.1:1080
 
 安装并进行了必要的配置后，就可以开始使用 git 了。
 
-或许你知道一些图形化的软件可以通过鼠标操作界面来执行各种 git 操作，但是，我还是建议使用终端指令，因为这些软件有很多，不同的软件会有不同的操作方法，不可能都讲到，而且这些软件实际上都是在执行终端指令，所以接下来对 git 的学习都是在终端下进行的。
+或许你知道一些图形化的软件可以通过鼠标操作界面来执行各种 git 操作，但是，我还是建议使用终端指令，因为这些软件有很多，不同的软件会有不同的操作方法，不可能都讲到，而且这些软件实际上都是在执行终端指令，而 git 本身是一个命令行软件，它没有提供 gui，这些软件只是辅助作用，所以接下来对 git 的学习都是在终端下进行的。
 
-git 本质上是一个终端软件，你需要在终端下执行指令，在 Linux 下，你可以随意选择自己喜欢的终端模拟器，在 Windows 下，你可以直接使用 git bash 作为终端，如果你觉得它太丑的话，你也可以使用 powershell 或其他终端模拟器。
+由于 git 是一个命令行软件，你需要在终端输入指令在可以使用 git，在 Linux 下，你可以随意选择自己喜欢的终端模拟器，在 Windows 下，你可以直接使用 git bash 作为终端，如果你觉得它太丑的话，你也可以使用 powershell 或其他终端模拟器。
 
-在进行接下来的操作之前，新建一个文件夹用来存放你的学习项目，当然，你也可以使用你已有的小项目学习 git，在你的项目目录下开启终端，即可执行 git 指令。
+在进行接下来的操作之前，新建一个文件夹用来存放你的学习项目，在当前的文件夹下开启终端，即可执行 git 指令。接下来的演示会使用一个空仓库来进行演示。
+
+在 Windows 下，你可以新建一个文件夹，
+
+注意：如果你使用 Windows 系统，为了避免遇到各种莫名其妙的问题，请确保目录名（包括父目录）不包含中文。
 
 #### 初始化 git 仓库
 
@@ -140,15 +144,56 @@ git init
 git status
 ```
 
-#### 添加一个文件
+该命令会返回当前 git 仓库的状态。
 
-创建好git仓库后，添加一个文件，你对这个文件的修改
+如果是空仓库，你应该会得到这样的输出
 
 ```bash
-git add file_name
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
 ```
 
+#### 添加一个文件到暂存区
 
+接下来向你的空项目中写入一个文件。
+
+添加一个 `hello.c` 文件后，git 会提示你发现了一个未追踪的文件，文件名为 `hello.c`。
+
+同时，git 也会提示你使用 `"git add <file>..."` 来添加这个文件到暂存区以进行提交。
+
+```bash
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	hello.c
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+```bash
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   hello.c
+```
+
+```bash
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
 
 ---
 
