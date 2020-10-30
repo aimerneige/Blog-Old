@@ -132,7 +132,7 @@ git init
 
 我们可以在一个非 git 仓库的项目目录下执行 `git init` 来初始化一个 git 仓库。
 
-执行完这个指令后，这个文件夹就变成了一个 git 仓库，你会发现你的文件夹下多了一个名称为 `.git` 的隐藏文件夹，这个文件夹下保存的就是 git 生成的文件，你不需要在意里面有什么，你也不需要修改他们，除非你在想要研究 git 的工作原理，如果你只是想要使用 git 的话，把它交给 git 来处理就好了。如果你不想让 git 托管这个项目了，你可以删掉这个文件夹，这个目录就不再是一个 git 仓库，而是变成了一个普通的文件夹。
+执行完这个指令后，这个文件夹就变成了一个 git 仓库，你会发现你的文件夹下多了一个名称为 `.git` 的隐藏文件夹，这个文件夹下保存的就是 git 生成的文件。你不需要在意里面有什么，你也不需要修改他们，除非你在想要研究 git 的工作原理。如果你只是想要使用 git 的话，把它交给 git 来处理就好了。如果你不想让 git 托管这个项目了，你可以删掉这个文件夹，这个目录就不再是一个 git 仓库，而是变成了一个普通的文件夹。
 
 初始化完成后，你就拥有了你自己的第一个 git 仓库，接下来，在这个仓库中你可以执行更多的 git 指令了。
 
@@ -144,9 +144,9 @@ git init
 git status
 ```
 
-该命令会返回当前 git 仓库的状态。
+该命令会返回当前 git 仓库的状态信息。
 
-如果是空仓库，你应该会得到这样的输出
+由于当前目录是一个空仓库，你会得到这样的输出：
 
 ```bash
 $ git status
@@ -157,13 +157,27 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
-#### 添加一个文件到暂存区
+`On branch master` 当前分支为 master 分支
+
+`No commits yet` 当前目录下没有任何提交记录
+
+`nothing to commit` 没有可以进行提交的文件
+
+`create/copy files and use "git add" to track` 创建或复制文件，然后使用 `git add` 来追踪
+
+这里出现了一些还没有介绍的内容，比如分支，提交等，这些将会在之后介绍，你现在只需要记住`git status` 这个指令即可。
+
+#### 添加一个文件到暂存
 
 接下来向你的空项目中写入一个文件。
 
-添加一个 `hello.c` 文件后，git 会提示你发现了一个未追踪的文件，文件名为 `hello.c`。
+你可以使用下面的命令快速创建一个空文件：
 
-同时，git 也会提示你使用 `"git add <file>..."` 来添加这个文件到暂存区以进行提交。
+```bash
+touch hello.c
+```
+
+添加一个 `hello.c` 文件后，使用 `git status` 指令， git 会提示你发现了一个未追踪的文件，文件名为 `hello.c`。
 
 ```bash
 $ git status
@@ -177,6 +191,10 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
+
+同时，git 提示你使用 `"git add <file>..."` 来添加这个文件到暂存区以进行提交。
+
+
 
 ```bash
 $ git status
@@ -197,7 +215,7 @@ nothing to commit, working tree clean
 
 ---
 
-git 是一个庞大的软件，它的功能远远不止这些，感兴趣你可以查阅官方文档或者找一些介绍 git 的书籍来进一步学习 git，但是在我看来这些常用的指令已经够了，
+git 是一个庞大的软件，它的功能远远不止这些，感兴趣你可以查阅官方文档或者找一些介绍 git 的书籍来进一步学习 git，但是在我看来这些常用的指令已经足够基本的使用了，如果有时间的话，我会在日后更新更多的内容。
 
 ## GitHub
 
