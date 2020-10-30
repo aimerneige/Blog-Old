@@ -157,6 +157,8 @@ No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 ```
 
+接下来介绍一下这些输出的含义：
+
 `On branch master` 当前分支为 master 分支
 
 `No commits yet` 当前目录下没有任何提交记录
@@ -167,7 +169,7 @@ nothing to commit (create/copy files and use "git add" to track)
 
 这里出现了一些还没有介绍的内容，比如分支，提交等，这些将会在之后介绍，你现在只需要记住`git status` 这个指令即可。
 
-#### 添加一个文件到暂存
+#### 添加一个文件到暂存区
 
 接下来向你的空项目中写入一个文件。
 
@@ -191,6 +193,14 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
+
+`Untracked files` 未追踪的文件
+
+`use "git add <file>..." to include in what will be committed` 使用 `git add <file>...` 来添加将要提交的内容
+
+`nothing added to commit but untracked files present` 没有添加任何待提交的内容但存在未跟踪的文件
+
+`use "git add" to track`
 
 同时，git 提示你使用 `"git add <file>..."` 来添加这个文件到暂存区以进行提交。
 
