@@ -33,7 +33,7 @@
 
 就像这样：
 
-```
+```bash
 ├── 2020-01-12-AimerNeige_first_update
 │   └── ...
 ├── 2020-01-19-AimerNeige_fix_something
