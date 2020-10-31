@@ -2,8 +2,8 @@
 title: C Static Function
 math: true
 date: 2020-10-31 20:31:36
-tags:
-category:
+tags: C/C++
+category: Program
 index_img:
 banner_img:
 ---
