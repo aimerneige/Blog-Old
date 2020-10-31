@@ -33,7 +33,20 @@
 
 就像这样：
 
-![](git_01.png)
+```
+├── 2020-01-12-AimerNeige_first_update
+│   └── ...
+├── 2020-01-19-AimerNeige_fix_something
+│   └── ...
+├── 2020-01-21-AimerNeige_make_ui_look_better
+│   └── ...
+├── 2020-01-29-Farewell_encrypt_data
+│   └── ...
+├── 2020-02-12-AimerNeige_fix_bugs
+│   └── ...
+└── current_project
+    └── ...
+```
 
 但是这样会有很多问题
 
