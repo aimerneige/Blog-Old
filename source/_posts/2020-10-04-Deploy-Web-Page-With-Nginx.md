@@ -3,7 +3,7 @@ title: Deploy Web Page With Nginx
 math: true
 date: 2020-10-04 01:18:44
 tags: Program
-category: [Web, Linux]
+category: Web
 index_img:
 banner_img:
 ---
