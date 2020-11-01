@@ -381,8 +381,8 @@ page404:
 # Links Page
 #---------------------------
 links:
-  banner_img: /img/default.jpg
-  banner_img_height: 60  # available: 0 - 100
+  banner_img: /img/bh3.jpeg
+  banner_img_height: 40  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: Friends
   items:

@@ -5,7 +5,7 @@ date: 2020-11-01 18:21:23
 tags: C/C++
 category: Program
 index_img:
-banner_img:
+banner_img: /img/miku.jpg
 ---
 
 # C 语言多线程基础
