@@ -1,12 +1,23 @@
-<!-- https://www.geeksforgeeks.org/thread-functions-in-c-c/?ref=lbp -->
-<!-- https://www.bilibili.com/video/BV1kt411z7ND -->
+---
+title: C Thread Basic
+math: true
+date: 2020-11-01 18:21:23
+tags: C/C++
+category: Program
+index_img:
+banner_img:
+---
 
-# C 语言多线程
+# C 语言多线程基础
 
 |         |      |              |
 | ------- | ---- | ------------ |
 | thread  | 线程 | 有共享内存   |
 | process | 进程 | 没有共享内存 |
+
+```
+gcc file.c -lpthread
+```
 
 创建线程
 
@@ -361,6 +372,8 @@ int main()
     return 0;
 }
 ```
+
+较为完整的写法
 
 ```c
 #include <stdio.h>
