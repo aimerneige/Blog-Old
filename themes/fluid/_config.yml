@@ -319,8 +319,8 @@ remark42:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/default.jpg
-  banner_img_height: 60  # available: 0 - 100
+  banner_img: /img/Linux.png
+  banner_img_height: 100  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 'Archive'
 
@@ -329,7 +329,7 @@ archive:
 #---------------------------
 category:
   banner_img: /img/default.jpg
-  banner_img_height: 60  # available: 0 - 100
+  banner_img_height: 70  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 'Category'
   post_limit: 10
@@ -340,8 +340,8 @@ category:
 # Tags Page
 #---------------------------
 tag:
-  banner_img: /img/default.jpg
-  banner_img_height: 60  # available: 0 - 100
+  banner_img: /img/miku.jpg
+  banner_img_height: 70  # available: 0 - 100
   banner_mask_alpha: 0.3  # available: 0 - 1.0
   subtitle: 'Tags'
   tagcloud:
