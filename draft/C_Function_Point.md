@@ -27,8 +27,8 @@ int Func(int x); // 函数的声明
 
 int (*p) (int x); // 函数指针的定义
 
-p = Func; // 函数指针的赋值
-p = &Func; // 另一种可行的写法
+p = &Func; // 函数指针的赋值
+p = Func; // 另一种可行的写法
 ```
 
 ## 函数指针的调用
@@ -65,12 +65,10 @@ int max(int a, int b)
 2. 与普通指针不同，我们不使用函数指针来分配和释放内存。
 3. 函数名也可以用来获取函数的地址。（详见[对函数赋值和调用的一些说明](#对函数赋值和调用的一些说明)）
 4. 类似普通的指针，我们也有函数指针数组。（详见[函数指针数组示例](#函数指针数组示例)）
-5. 
-
-
+5. 函数指针可被用于 switch case 结构中，例如[函数指针数组示例](#函数指针数组示例)中的示例程序中，用户可以通过输入 0 ～ 2 来选择不同的操作。
+6. 就像
 
 ## 对函数赋值和调用的一些说明
-
 
 ## 函数指针数组示例
 
@@ -94,7 +92,7 @@ void multiply(int a, int b)
 
 int main()
 {
-    // fun_ptr_arr is an array of function pointers 
+    // fun_ptr_arr is an array of function pointers
     void (*fun_ptr_arr[])(int, int) = {add, subtract, multiply};
     unsigned int ch, a = 15, b = 10;
 
@@ -111,4 +109,5 @@ int main()
     return 0;
 }
 ```
-<!-- https://www.geeksforgeeks.org/function-pointer-in-c/ -->
+
+建议阅读： <https://www.geeksforgeeks.org/function-pointer-in-c/>
