@@ -66,7 +66,8 @@ int max(int a, int b)
 3. 函数名也可以用来获取函数的地址。（详见[对函数赋值和调用的一些说明](#对函数赋值和调用的一些说明)）
 4. 类似普通的指针，我们也有函数指针数组。（详见[函数指针数组示例](#函数指针数组示例)）
 5. 函数指针可被用于 switch case 结构中，例如[函数指针数组示例](#函数指针数组示例)中的示例程序中，用户可以通过输入 0 ～ 2 来选择不同的操作。
-6. 就像
+6. 就像普通数据的指针一样，一个函数指针同样可以被用作函数的参数和返回值，例如[函数指针作为参数的示例](#函数指针作为参数的示例)中的程序中 `wrapper()` 函数接受 `void (*fun)()` 作为参数并且执行这个函数。在[函数指针作为参数的应用](#函数指针作为参数的应用)中查看更多内容。
+7. 
 
 ## 对函数赋值和调用的一些说明
 
@@ -109,5 +110,61 @@ int main()
     return 0;
 }
 ```
+
+## 函数指针作为参数的示例
+
+```c
+// A simple C program to show function pointers as parameter
+#include <stdio.h>
+
+// Two simple functions
+void fun1() { printf("Fun1\n"); }
+void fun2() { printf("Fun2\n"); }
+
+// A function that receives a simple function
+// as parameter and calls the function
+void wrapper(void (*fun)())
+{
+    fun();
+}
+
+int main()
+{
+    wrapper(fun1);
+    wrapper(fun2);
+    return 0;
+}
+```
+
+## 函数指针作为参数的应用
+
+```c
+// An example for qsort and comparator 
+#include <stdio.h> 
+#include <stdlib.h> 
+
+// A sample comparator function that is used 
+// for sorting an integer array in ascending order. 
+// To sort any array for any other data type and/or 
+// criteria, all we need to do is write more compare 
+// functions. And we can use the same qsort() 
+int compare (const void * a, const void * b) 
+{ 
+return ( *(int*)a - *(int*)b ); 
+} 
+
+int main () 
+{ 
+int arr[] = {10, 5, 15, 12, 90, 80}; 
+int n = sizeof(arr)/sizeof(arr[0]), i; 
+
+qsort (arr, n, sizeof(int), compare); 
+
+for (i=0; i<n; i++) 
+	printf ("%d ", arr[i]); 
+return 0; 
+}
+```
+
 
 建议阅读： <https://www.geeksforgeeks.org/function-pointer-in-c/>
