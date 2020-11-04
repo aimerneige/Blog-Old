@@ -2,9 +2,7 @@
 
 函数指针在大型的 C 语言项目中十分重要，但是学校对它的介绍一带而过，国内一些介绍函数指针的文章十分粗浅甚至存在错误（这里就不点名了），因此博主写了这篇文章介绍函数指针，希望能够帮助一些 C 语言学习者。
 
-文章部分内容引用于 <https://www.geeksforgeeks.org/function-pointer-in-c/>
-
-请不要将本文章转载到 CSDN 平台。
+文章部分内容翻译引用于 <https://www.geeksforgeeks.org/function-pointer-in-c/>
 
 ## 函数指针的概念
 
@@ -87,7 +85,7 @@ int max(int a, int b)
 4. 类似普通的指针，我们也有函数指针数组。（详见[函数指针数组示例](#函数指针数组示例)）
 5. 函数指针可被用于 switch case 结构中，例如[函数指针数组示例](#函数指针数组示例)中的示例程序中，用户可以通过输入 0 ～ 2 来选择不同的操作。
 6. 就像普通数据的指针一样，一个函数指针同样可以被用作函数的参数和返回值，例如[函数指针作为参数的示例](#函数指针作为参数的示例)中的程序中 `wrapper()` 函数接受 `void (*fun)()` 作为参数并且执行这个函数。这个特性有很多的应用，你可以在[函数指针作为参数的应用](#函数指针作为参数的应用)中查看更多内容。
-7. 
+7. C++ 中的许多面向对象特性都是使用 C 中的函数指针实现的，例如虚函数，类方法是使用函数指针实现的另一个示例。
 
 ## 对函数赋值和调用的一些说明
 
@@ -126,7 +124,7 @@ int max(int a, int b)
 
 你会发现 `(max)` `(&max)` 拥有相同的值，即直接使用函数名也可以获得地址。
 
-因此，我更推荐第二种没有&和*的写法，更加直观易用。
+因此，我更推荐第二种没有 `&` 和 `*` 的写法，更加直观易用。
 
 ## 函数指针数组示例
 
@@ -150,7 +148,7 @@ void multiply(int a, int b)
 
 int main()
 {
-    // fun_ptr_arr is an array of function pointers
+    // fun_ptr_arr 是一个函数指针的数组
     void (*fun_ptr_arr[])(int, int) = {add, subtract, multiply};
     unsigned int ch, a = 15, b = 10;
 
@@ -171,15 +169,14 @@ int main()
 ## 函数指针作为参数的示例
 
 ```c
-// A simple C program to show function pointers as parameter
+// 一个简单的 C 语言程序来演示使用函数指针作为参数
 #include <stdio.h>
 
-// Two simple functions
+// 俩个简单的函数
 void fun1() { printf("Fun1\n"); }
 void fun2() { printf("Fun2\n"); }
 
-// A function that receives a simple function
-// as parameter and calls the function
+// 一个接受函数作为参数并在内部执行这个函数的函数
 void wrapper(void (*fun)())
 {
     fun();
@@ -198,15 +195,15 @@ int main()
 我们可以使用将函数指针作为参数来避免书写重复的代码，例如较为简单的函数 `qsort()` 可以被用来排序数组或其他任何的自定义结构体。不仅这些，有了函数指针和空指针，使用 `qsort()` 函数可以对任何数据类型进行排序。
 
 ```c
-// An example for qsort and comparator
+// 一个关于 qsort 和 比较器的定义
 #include <stdio.h>
 #include <stdlib.h>
 
-// A sample comparator function that is used
-// for sorting an integer array in ascending order.
-// To sort any array for any other data type and/or
-// criteria, all we need to do is write more compare
-// functions. And we can use the same qsort()
+// 一个比较器示例函数
+// 它被用对一个整数数组进行排序
+// 为了对任何其他数据类型或条件的任何数组进行排序
+// 我们需要编写更多的比较函数
+// 这样我们就可以使用相同的 qsort()
 int compare(const void *a, const void *b)
 {
     return (*(int *)a - *(int *)b);
@@ -226,11 +223,53 @@ int main()
 }
 ```
 
-类似 `qsort()` 函数，我们可以定义自己的可以用于任何数据类型的函数来处理不同的任务。下面是一个搜索函数的示例，它可以被用于任何数据类型。事实上，我们可以通过写一个专门的比较函数使用这个搜索函数来找到相近的元素（低于某阈值）
+类似 `qsort()` 函数，我们可以定义自己的可以用于任何数据类型的函数来处理不同的任务。下面是一个搜索函数的示例，它可以被用于任何数据类型。事实上，我们可以通过写一个专门的比较函数使用这个搜索函数来找到相近的元素（低于某阈值）。
 
 ```c
+#include <stdio.h>
+#include <stdbool.h>
 
+// 一个被用来对整数数组进行搜索的比较函数
+bool compare(const void *a, const void *b)
+{
+    return (*(int *)a == *(int *)b);
+}
+
+// 可以被用来在一个长度为 arr_size 的数组 arr[] 中
+// 搜索元素 *x 的通用 search() 函数。
+// 注意这里使用 void 指针，这样函数就可以在调用
+// 的时候传入任何类型的参数
+// ele_size 是数组元素的大小
+int search(void *arr, int arr_size, int ele_size, void *x,
+           bool compare(const void *, const void *))
+{
+
+    // 因为 char 占用一个字节，因此我们使用 char 指针
+    // 来可以保证用于任何类型的指针运算都正确，我们
+    // 需要将 index 与元素的大小 ele_size 相乘
+    char *ptr = (char *)arr;
+
+    int i;
+    for (i = 0; i < arr_size; i++)
+        if (compare(ptr + i * ele_size, x))
+            return i;
+
+    // 如果没有找到元素
+    return -1;
+}
+
+int main()
+{
+    int arr[] = {2, 5, 7, 90, 70};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int x = 7;
+    printf("Returned index is %d ", search(arr, n,
+                        sizeof(int), &x, compare));
+    return 0;
+}
 ```
+
+这个函数可以被用于任何类型的数据，只要定义一个比较函数。
 
 ## 如何使用 typedef 定义函数指针类型
 
@@ -263,6 +302,15 @@ extern void qsort (void *__base, size_t __nmemb, size_t __size,
 
 ```c
 typedef int (*__compar_fn_t) (const void *, const void *);
+```
+
+上例中 `search()` 函数可以这样定义：
+
+```c
+// 类型定义
+typedef bool (*compare_fun)(const void *, const void *);
+// 函数声明
+int search(void *arr, int arr_size, int ele_size, void *x, compare_fun compare);
 ```
 
 ---
