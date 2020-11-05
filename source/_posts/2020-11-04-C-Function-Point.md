@@ -87,6 +87,36 @@ int max(int a, int b)
 }
 ```
 
+另一种可行的写法
+
+```c
+#include <stdio.h>
+
+int max(int a, int b); // 函数声明
+
+int main(int argc, char const *argv[])
+{
+    int a = 12;
+    int b = 32;
+
+    int (*p)(int, int); // 函数指针定义
+    p = max; // 函数指针赋值
+
+    int c = *p(a, b); // 函数指针的调用
+    printf("%d\n", c); // 输出 `32`
+
+    return 0;
+}
+
+// 函数定义
+int max(int a, int b)
+{
+    return a > b ? a : b;
+}
+```
+
+注：对于这俩种调用的写法的详细说明见[对函数赋值和调用的一些说明](#对函数赋值和调用的一些说明)
+
 ## 函数指针中要注意的一些内容
 
 1. 与一般的指针不同，函数指针指向代码而不是数据。通常，一个函数指针存储了可执行代码的起始位置。
@@ -205,7 +235,7 @@ int main()
 我们可以使用将函数指针作为参数来避免书写重复的代码，例如较为简单的函数 `qsort()` 可以被用来排序数组或其他任何的自定义结构体。不仅这些，有了函数指针和空指针，使用 `qsort()` 函数可以对任何数据类型进行排序。
 
 ```c
-// 一个关于 qsort 和 比较器的定义
+// 一个关于 qsort 和比较器的定义
 #include <stdio.h>
 #include <stdlib.h>
 
