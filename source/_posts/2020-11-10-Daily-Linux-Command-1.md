@@ -2,8 +2,8 @@
 title: Daily Linux Command 1
 math: true
 date: 2020-11-10 10:41:51
-tags:
-category:
+tags: Command
+category: Linux
 index_img:
 banner_img:
 ---
