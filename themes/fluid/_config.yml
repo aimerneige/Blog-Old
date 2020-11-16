@@ -446,6 +446,12 @@ links:
       link: 'https://vritser.github.io/',
       image: 'https://avatars3.githubusercontent.com/u/16340478?s=400&u=d35db0b9c626e1464692dbb189dbf98e1ab80dd6&v=4'
     }
+    - {
+      title: '异国迷宫的十字路口',
+      intro: '一位弱鸡带学生的个人博客',
+      lihk: 'https://blog.fivezha.cn/',
+      image: 'https://cn.gravatar.com/avatar/bbca35300364b268662a56b05d130341s'
+    }
     # - {
     #   title: 'Nios34',
     #   intro: 'Nios34 的个人页面',
