@@ -429,6 +429,12 @@ links:
       image: 'https://cdn.jsdelivr.net/gh/geekHe-P/PicGo/article/7a2cb9f60c2846322890b138ae849557.jpeg'
     }
     - {
+      title: '异国迷宫的十字路口',
+      intro: '一位弱鸡带学生的个人博客',
+      lihk: 'https://blog.fivezha.cn/',
+      image: 'https://cn.gravatar.com/avatar/bbca35300364b268662a56b05d130341s'
+    }
+    - {
       title: 'Gaein nidb',
       intro: 'Gaein nidb的网站',
       link: 'https://www.gaein.cn/',
