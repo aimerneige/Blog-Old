@@ -65,6 +65,8 @@ CentBrowser 百分浏览器 <http://www.centbrowser.com/> Chromium 的一个分�
 
 Firefox <https://www.mozilla.org/zh-CN/firefox/>
 
+> 注意不要下载国内定制版 `https://www.firefox.com.cn/` FireFox (AD Pro Plus For China User)
+
 Edge <https://www.microsoft.com/zh-cn/edge> 注意是新版 `Edge` 不是 Win10 自带的那个。
 
 此外还有 Firefox Dev 版本 <https://www.mozilla.org/zh-CN/firefox/developer/> 可以用来调试 web 程序。
