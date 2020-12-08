@@ -170,7 +170,7 @@ x = isinstance(y, myObj)
 > 以下展示了使用 isinstance 函数的实例：
 >
 > ```bash
-> >>>a = 2
+> >>> a = 2
 > >>> isinstance (a,int)
 > True
 > >>> isinstance (a,str)
