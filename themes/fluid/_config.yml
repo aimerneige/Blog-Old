@@ -411,12 +411,6 @@ links:
       image: 'https://secure.gravatar.com/avatar/11804ec6b3178d7f4ada6177d224de2d?s=112&d=mm'
     }
     - {
-      title: 'Dreace',
-      intro: '中北信息开发者',
-      link: 'https://blog.dreace.top/',
-      image: 'https://cdn.jsdelivr.net/gh/dreace/dreace.github.io@master/images/avatar.png'
-    }
-    - {
       title: '鸢尾花开',
       intro: '浩二先辈',
       link: 'http://ishero.net/',
@@ -431,14 +425,26 @@ links:
     - {
       title: '异国迷宫的十字路口',
       intro: '一位弱鸡带学生的个人博客',
-      lihk: 'https://blog.fivezha.cn/',
+      link: 'https://blog.fivezha.cn/',
       image: 'https://cn.gravatar.com/avatar/bbca35300364b268662a56b05d130341s'
+    }
+    - {
+      title: 'fzf404',
+      intro: 'fzf的网站',
+      link: 'https://fzf404.top/',
+      image: 'https://fzf404.top/public/avatar.jpg'
     }
     - {
       title: 'Gaein nidb',
       intro: 'Gaein nidb的网站',
       link: 'https://www.gaein.cn/',
       image: 'https://avatars2.githubusercontent.com/u/36162655?s=460&u=69b5ab41907989a57572a63bea23eccf47203d8d&v=4'
+    }
+    - {
+      title: 'Dreace',
+      intro: '中北信息开发者',
+      link: 'https://blog.dreace.top/',
+      image: 'https://cdn.jsdelivr.net/gh/dreace/dreace.github.io@master/images/avatar.png'
     }
     - {
       title: '0047ol',

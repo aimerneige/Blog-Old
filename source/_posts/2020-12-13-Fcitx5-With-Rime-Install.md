@@ -1,5 +1,5 @@
 ---
-title: Fcitx5_With_Rime_Install
+title: Fcitx5 With Rime Install
 math: true
 date: 2020-12-13 19:35:18
 tags: Software
