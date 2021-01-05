@@ -147,9 +147,9 @@ sudo nginx -s reload
 
 # 后记
 
-## 为什么 `Ngixn` 的配置文件要这样改
+## 为什么 `Nginx` 的配置文件要这样改
 
-`Ngixn` 的默认配置文件位于 `/etc/nginx/` 目录下，主配置文件为 `nginx.conf`
+`Nginx` 的默认配置文件位于 `/etc/nginx/` 目录下，主配置文件为 `nginx.conf`
 
 我们首先看一下默认的主配置文件
 
