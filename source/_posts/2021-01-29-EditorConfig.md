@@ -72,8 +72,8 @@ indent_size = 2
 | \*           | 匹配任何字符串，除了路径分割符 (/)                                           |
 | \*\*         | 匹配任何字符串                                                               |
 | ?            | 匹配任何单字符                                                               |
-| [name]       | Matches any single character in name                                         |
-| [!name]      | Matches any single character not in name                                     |
+| [name]       | 匹配 name 中所包含的任一字符                                         |
+| [!name]      | 匹配不包含在 name 中的任一字符                                     |
 | {s1,s2,s3}   | 匹配任何给定单字符串 (用逗号分割) (**在 EditorConfig Core 0.11.0 后受支持**) |
 | {num1..num2} | 匹配任何在 num1 和 num2 之间的数字，num1 和 num2 可以是正数也可以是负数      |
 
