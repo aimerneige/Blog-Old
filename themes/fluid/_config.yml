@@ -396,7 +396,7 @@ links:
       title: 'HelloWorld的小博客',
       intro: '这里是一个小白的博客',
       link: 'https://mzdluo123.github.io/',
-      image: 'https://avatars0.githubusercontent.com/u/23146087?s=400&v=4'
+      image: 'https://gravatar.loli.net/avatar/f7e8af6d341b76ad3de6757a8f86f2b4?d=mp&v=1.3.10'
     }
     - {
       title: 'TangZ',
@@ -411,8 +411,8 @@ links:
       image: 'https://secure.gravatar.com/avatar/11804ec6b3178d7f4ada6177d224de2d?s=112&d=mm'
     }
     - {
-      title: '鸢尾花开',
-      intro: '浩二先辈',
+      title: 'HeoLis',
+      intro: 'We need to go faster and deeper.',
       link: 'http://ishero.net/',
       image: 'https://avatars3.githubusercontent.com/u/29891793?s=460&v=4'
     }
