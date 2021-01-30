@@ -401,6 +401,8 @@ router.psot("/new", fuction(){ /* function */ } );
 
 例如我们的请求路径为 `/data` 所需请求参数为 `id` 和 `class` 可以这样写：
 
+> 注： 对应的示例请求地址为 `https://api.example.com/data?id=1930201&class=302`
+
 ```js
 router.get("/data", function (req, res) {
   res.type("application/json");
