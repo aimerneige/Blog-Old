@@ -510,7 +510,9 @@ db.query(sql_command, function (err, result, fields) {
 });
 ```
 
-### 服务部署
+## 服务部署
+
+> 待完善，咕咕咕
 
 1. 将项目上传到服务器
 2. 修改 `db.js` 的配置
