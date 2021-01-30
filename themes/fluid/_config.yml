@@ -20,7 +20,7 @@ force_https: false
 
 code:
   copy_btn: true
-  highlight: 
+  highlight:
     enable: true
     lib: 'highlightjs'
     highlightjs:
