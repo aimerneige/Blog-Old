@@ -141,7 +141,7 @@ Server start in development mode on http://localhost:4000; press Ctrl + C to ter
 { "status": 200, "info": "If you see this, the server deploy success!" }
 ```
 
-如果你在服务器启动项目，假设你的服务器 ip 为 `43.192.82.215` 并且配置了域名 `api.aimerneige.icu` ，你可以通过在浏览器内访问下面的地址测试服务器：
+如果你在服务器启动项目，假设你的服务器 ip 为 `43.192.82.215` 并且配置了域名 `api.aimerneige.com` ，你可以通过在浏览器内访问下面的地址测试服务器：
 
 - <http://43.192.82.215:4000/>
 - <http://api.aimerneige.com:4000/>
