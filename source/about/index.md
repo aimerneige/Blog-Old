@@ -16,7 +16,7 @@ I am just a student learning IoT from the North University of China.
 ## Language
 
 - I am from China, so I am proficient in Chinese.
-- I wants to share my code to the world, so I also master English.
+- I also master English.
 - I know a little Japness.
 
 If you speak Chinese with me, I will be happy but English is also possible. 
