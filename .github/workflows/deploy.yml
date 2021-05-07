@@ -7,7 +7,7 @@ on:
 
 env:
   GIT_USER: AimerNeige
-  GIT_EMAIL: aimer.neige@aimerneige.com
+  GIT_EMAIL: aimer.neige.soft@gmail.com
   DEPLOY_REPO: aimerneige/aimerneige.github.io
   DEPLOY_BRANCH: master
 
