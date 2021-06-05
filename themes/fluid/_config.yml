@@ -390,7 +390,7 @@ links:
       title: '伞',
       intro: '一只咸鱼的学习记录',
       link: 'https://farewell12345.github.io/',
-      image: 'https://farewell12345.github.io/farewell12345.github.io/img/HEAD.png'
+      image: 'https://avatars.githubusercontent.com/u/53655863?v=4'
     }
     - {
       title: 'HelloWorld的小博客',
@@ -429,34 +429,22 @@ links:
       image: 'https://cn.gravatar.com/avatar/bbca35300364b268662a56b05d130341s'
     }
     - {
+      title: 'Gaein nidb',
+      intro: 'Gaein nidb的网站',
+      link: 'https://www.gaein.cn/',
+      image: 'https://avatars.githubusercontent.com/u/36162655?v=4'
+    }
+    - {
       title: 'fzf404',
       intro: 'fzf的网站',
       link: 'https://fzf404.top/',
       image: 'https://fzf404.top/public/avatar.jpg'
     }
     - {
-      title: 'Gaein nidb',
-      intro: 'Gaein nidb的网站',
-      link: 'https://www.gaein.cn/',
-      image: 'https://img.cdn.gaein.cn/GNweb/GN.jpg'
-    }
-    - {
-      title: 'Dreace',
-      intro: '中北信息开发者',
-      link: 'https://blog.dreace.top/',
-      image: 'https://cdn.jsdelivr.net/gh/dreace/dreace.github.io@master/images/avatar.png'
-    }
-    - {
-      title: '0047ol',
-      intro: '整合稀缺软件仓库',
-      link: 'https://www.0047ol.com/',
-      image: 'https://raw.githubusercontent.com/aimerneige/PicGoData/master/img/047.png'
-    }
-    - {
-      title: 'vritser',
-      intro: '半斤八两',
-      link: 'https://vritser.github.io/',
-      image: 'https://avatars3.githubusercontent.com/u/16340478?s=400&u=d35db0b9c626e1464692dbb189dbf98e1ab80dd6&v=4'
+      title: '凛凛酱',
+      intro: '傻逼凛凛',
+      link: 'https://baolong24.github.io/',
+      image: 'https://avatars.githubusercontent.com/u/30337499?v=4'
     }
     - {
       title: 'Web-Worker',
@@ -464,6 +452,24 @@ links:
       link: 'https://web-worker.cn/',
       image: 'https://web-worker.cn/favicon.ico'
     }
+    - {
+      title: 'vritser',
+      intro: '半斤八两',
+      link: 'https://vritser.github.io/',
+      image: 'https://avatars3.githubusercontent.com/u/16340478?s=400&u=d35db0b9c626e1464692dbb189dbf98e1ab80dd6&v=4'
+    }
+    # - {
+    #   title: 'Dreace',
+    #   intro: '中北信息开发者',
+    #   link: 'https://blog.dreace.top/',
+    #   image: 'https://cdn.jsdelivr.net/gh/dreace/dreace.github.io@master/images/avatar.png'
+    # }
+    # - {
+    #   title: '0047ol',
+    #   intro: '整合稀缺软件仓库',
+    #   link: 'https://www.0047ol.com/',
+    #   image: 'https://raw.githubusercontent.com/aimerneige/PicGoData/master/img/047.png'
+    # }
     # - {
     #   title: 'Nios34',
     #   intro: 'Nios34 的个人页面',
