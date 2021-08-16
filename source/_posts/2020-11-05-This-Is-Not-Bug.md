@@ -58,3 +58,18 @@ switch (i)
 不管怎么说，问题解决了。
 
 这不是 Bug，而是 C 语言的特性。 #(滑稽)
+
+类似地，有如下代码：
+
+```c
+#include <stdio.h>
+
+int main() {
+    https://aimerneige.com
+    printf("Hello World!\n");
+
+    return 0;
+}
+```
+
+这里的代码直接贴上了一个 url，但是编译器也没有报错，是因为 `https` 被识别为标签，而后面的内容被识别为注释。
